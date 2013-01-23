@@ -1,8 +1,11 @@
-def fib(n)
-  a,b = 0,1
-  n.times do
-    yield a
-    a,b = b, a+b
+def generateFibonacci(limit)
+  first_num, second_num = 0,1
+  puts first_num
+  yield first_num, second_num, limit
+end
+generateFibonacci(1000) do |i,j,limit|
+  while j <= limit do
+    i,j = j,i+j
+    puts i
   end
 end
-fib(1000) { |i| print "number: #{i}\n" }
