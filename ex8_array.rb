@@ -7,8 +7,6 @@ class Array
     print " #{new_array} \n"
   end
 end
-arr1 = Array.new
-arr1 = [1,2,3]
-arr1.power(2)
-arr1.power(3)
-arr1.power(4)
+[3,4,5].power(2)
+[1,2,2].power(3)
+[1,2,2].power(4)
