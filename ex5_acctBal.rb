@@ -1,6 +1,6 @@
 class Customer
   attr_accessor :name, :account_no, :balance
-  @@counter = 0
+  @@counter = 1
   
   def initialize(cust_name)
     @name = cust_name
