@@ -1,5 +1,5 @@
 def traverseString
-  pattern = /^[a-z]+$/i
+  pattern = /[a-z]/i
   puts "Enter the string"
   str = gets.chomp.downcase
   char_count = Hash.new(0)
