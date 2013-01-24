@@ -1,7 +1,7 @@
 def traverseString
-  pattern = /^[A-z]+$/
+  pattern = /^[a-z]+$/i
   puts "Enter the string"
-  str = gets.chomp
+  str = gets.chomp.downcase
   char_count = Hash.new(0)
   str.each_char do |c|
     char_count[c] += 1 if c =~ pattern 
