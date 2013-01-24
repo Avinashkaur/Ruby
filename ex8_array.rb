@@ -1,9 +1,9 @@
 class Array
   def power(x)
     new_array = []
-    self.each { |i|
+    self.each do |i|
       new_array << i**x
-    }
+    end
     print " #{new_array} \n"
   end
 end
