@@ -9,8 +9,7 @@ end
 class Bike < Vehicle
   attr_accessor :dealer
   def initialize(name, price, dealer)
-    @name = name
-    @price = price
+    super(name,price)
     @dealer = dealer
   end
   def show
