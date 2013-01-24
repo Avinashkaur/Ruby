@@ -8,6 +8,7 @@ def checkPalindrome
     reversed_input = input_string.reverse
     if input_string == reversed_input
       puts "#{input_string} is palindrome"
+      exit(0)
     else
       puts "#{input_string} is not palindrome"
     end
