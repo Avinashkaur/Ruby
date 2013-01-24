@@ -1,4 +1,4 @@
-def traverseString
+def traverse_string
   pattern = /[a-z]/i
   puts "Enter the string"
   str = gets.chomp.downcase
@@ -8,4 +8,4 @@ def traverseString
   end
   puts char_count
 end
-traverseString
+traverse_string
