@@ -6,8 +6,11 @@ def checkPalindrome
     input_string = gets.chomp
     exit(0) if input_string =~ pattern
     reversed_input = input_string.reverse
-    puts "#{input_string} is palindrome" if input_string == reversed_input
-    puts "#{input_string} is not palindrome" if input_string != reversed_input
+    if input_string == reversed_input
+      puts "#{input_string} is palindrome"
+    else
+      puts "#{input_string} is not palindrome"
+    end
   end
 end
 checkPalindrome
