@@ -2,11 +2,7 @@ def reverse_sentence
   puts "Enter string:"
   sentence = gets.chomp
   words = sentence.split
-  arr = []
-  words.each do |i|
-    arr.push(i)
-  end
-  print arr.reverse.join(" ")
-  puts ""
+  print words.flatten.reverse.join(" ")
+  print "\n"
 end
 reverse_sentence
