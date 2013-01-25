@@ -7,6 +7,7 @@ def fact(n)
 end
 
 def pascal_triangle_row(n) 
+  puts 1
   for k in 1..n
     yield(k)
     puts ""
@@ -16,7 +17,7 @@ end
 print "enter number: "
 num = gets.chomp
 
-pascal_triangle_row(Integer(num)) do |i|
+pascal_triangle_row(num.to_i) do |i|
   for j in 0..i
     print (fact(i)/(fact(j)*fact(i-j)))
     print " "
