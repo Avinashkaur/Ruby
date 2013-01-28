@@ -1,6 +1,11 @@
 def highlight_pattern(user_string, searched_item)
-  puts user_string.gsub(/#{searched_item}/i, '(\0)')
-  puts "Occurences:  #{user_string.scan(/#{searched_item}/i).length}"
+  count = 0
+  final_string = user_string.gsub(/#{searched_item}/i) do |s| 
+    count += 1
+    s = "(" + s + ")" 
+  end
+  puts "#{final_string}"
+  puts "Occurences: #{count}"
 end
 puts "enter input string"
 user_string = gets.chomp
