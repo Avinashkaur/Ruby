@@ -1,8 +1,5 @@
 def factorial(upper_limit)
-  fact = (1..upper_limit).inject do |prod,i| 
-    prod *= i
-    prod
-  end
+  fact = (1..upper_limit).inject { |prod,i| prod *= i }
   puts "Factorial of #{upper_limit} is #{fact}"
 end
 puts "enter the upper limit:"
