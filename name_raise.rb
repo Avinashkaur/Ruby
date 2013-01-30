@@ -2,8 +2,10 @@ class Name
   attr_accessor:firstname, :lastname
   def initialize(fname,lname)
     begin
-      if (fname.empty? || lname.empty?)
-        raise "Blank Name entered"
+      if (fname.strip.empty?)
+        raise "First Name cannot be left blank"
+      elsif (lname.strip.empty?)
+        raise "Last Name cannot be left blank"
       elsif (fname != fname.capitalize)
         raise "First name should be capitalized"
       else
@@ -16,8 +18,8 @@ class Name
     end
   end
 end
-puts "Enter your full name"
-name = gets.chomp
-fname = name.split(" ")[0]
-lname = name.split(" ")[1]
-Name.new(fname.to_s, lname.to_s)
+puts "Enter your first name"
+fname = gets.chomp
+puts "Enter your last name"
+lname = gets.chomp
+Name.new(fname, lname)
