@@ -6,11 +6,15 @@ def validate_time
   time1 = gets.chomp
   puts "Enter time2: "
   time2 = gets.chomp
-
-  if (time1 =~ pattern && time2 =~ pattern)
-    time_sum(time1, time2)
-  else
-    puts "Invalid Argument! Correct Arguments hh:mm:ss hh:mm:ss"
+  
+  begin
+    if (time1 =~ pattern && time2 =~ pattern)
+      time_sum(time1, time2)
+    else
+      puts "Invalid input! Correct input hh:mm:ss"
+    end
+  rescue 
+    puts "Invalid date entered!"
   end
 end
 def time_sum(time1, time2)
