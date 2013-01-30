@@ -2,7 +2,7 @@ require 'prime'
 def find_prime(n)
   arr = []
   puts "Printing prime numbers"
-  arr.push(2)
+  arr[0] = 2
   3.step(n,2) do |i|
     if Prime.prime?(i) 
       arr.push(i) 
