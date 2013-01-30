@@ -1,12 +1,9 @@
 require 'prime'
 def find_prime(n)
-  arr = []
+  arr = [2]
   puts "Printing prime numbers"
-  arr[0] = 2
   3.step(n,2) do |i|
-    if Prime.prime?(i) 
-      arr.push(i) 
-    end
+    arr.push(i) if Prime.prime?(i) 
   end
   puts arr
 end
