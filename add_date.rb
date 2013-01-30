@@ -1,10 +1,7 @@
 require "date"
 require "time"
-
 def validate_time
   pattern = /[0-2]?[0-9]:[0-9]?[0-9]:[0-9]?[0-9]/
-  flag = 0
-
   puts "Enter time1: "
   time1 = gets.chomp
   puts "Enter time2: "
@@ -15,16 +12,6 @@ def validate_time
   else
     puts "Invalid Argument! Correct Arguments hh:mm:ss hh:mm:ss"
   end
-
-  # ARGV.each do |d|
-  #   if d =~ pattern
-  #     flag = 1
-  #   else
-  #     puts "Invalid Argument! Correct Arguments hh:mm:ss hh:mm:ss"
-  #     exit(0)
-  #   end
-  # end
-  # time_sum(ARGV[0],ARGV[1]) if flag == 1 
 end
 def time_sum(time1, time2)
   first_time = DateTime.strptime(time1, "%H:%M:%S")
