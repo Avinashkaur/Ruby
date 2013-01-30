@@ -4,14 +4,10 @@ def load_file
   File.open("emp.csv", "r") do |f|
     f.each_line do |line|
       records = line.split(",").each { |entry| entry.chomp!}
-      emp_name = records[0]
-      emp_id = records[1]
-      emp_desig = records[2]
-      profiles[emp_desig].push("#{emp_name} (Emp Id: #{emp_id})")
+      profiles[records[2]].push("#{records[0]} (Emp Id: #{records[1]})")
     end
   end
   write_file(profiles)
-  # puts profiles
 end
 
 def write_file(profiles)

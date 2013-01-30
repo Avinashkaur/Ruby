@@ -1,7 +1,11 @@
 class Array
   def reverse_iterate
-    new_array = self.reverse
-    new_array.each { |element| yield(element)}
+    len = self.length
+    i = len
+    while (i>=0)
+      yield(self[i])
+      i -= 1
+    end
     print "\n"
   end
 end
