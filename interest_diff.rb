@@ -6,8 +6,8 @@ class Interest
     @time = time
   end
   def simple_interest
-    si = @principal*@@rate*@time
-    @principal+si
+    interest = @principal*@@rate*@time
+    @principal+interest
   end
   def compound_interest
     amt = @principal*(1+@@rate)**@time
@@ -18,10 +18,10 @@ class Interest
   end
 end
 puts "Enter principal:"
-p = gets.chomp.to_i
+principal = gets.chomp.to_i
 puts "Enter time:"
-t = gets.chomp.to_i
-new_amt = Interest.new(p,t)
+time = gets.chomp.to_i
+new_amt = Interest.new(principal,time)
 new_amt.simple_interest
 new_amt.compound_interest
 puts "Difference in Amount: #{new_amt.difference}"

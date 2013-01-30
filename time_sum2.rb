@@ -14,4 +14,4 @@ def time_sum(*input)
   difference = total_time.day - first_time.day
   puts total_time.strftime("#{difference} days %H:%M:%S")
 end
-time_sum("23:00:12","22:30:57","4:2:1","9:50:11")
+time_sum("00:00:12","12:30:57","4:2:1","9:50:11")
