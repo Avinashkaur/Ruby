@@ -1,17 +1,33 @@
-require "date"
-require "time"
-
-def time_sum(*input)
-  total_args = input.size
-  first_time = DateTime.strptime(input[0], "%H:%M:%S")
-  total_time = first_time
-  day_sum = 0
-  for n in 1..(total_args-1) do
-    next_time = DateTime.strptime(input[n],"%H:%M:%S")
-    day_sum += (next_time.hour + next_time.min/60.0 + next_time.sec/3600.0)/24
+def validate_time(*time_array)
+  pattern = /(0?[0-9]|1[1-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])/
+  len = time_array.size
+  flag = 0
+  for i in 0..(len-1)
+    flag = 1 if !(time_array[i] =~ pattern)
   end
-  total_time += day_sum
-  difference = total_time.day - first_time.day
-  puts total_time.strftime("#{difference} days %H:%M:%S")
+  if (flag == 0)
+    time_sum(*time_array)
+  else
+    puts "Invalid dates"
+  end
 end
-time_sum("00:00:12","12:30:57","4:2:1","9:50:11")
+def time_sum(*input)
+  len = input.size
+  total_seconds, total_minutes, total_hours = 0,0,0
+  for i in 0..(len-1) do
+    hours,minutes,seconds = input[i].split(":")
+    total_seconds += seconds.to_i
+    total_minutes += minutes.to_i
+    total_hours += hours.to_i
+  end
+  if(total_seconds > 60)
+    total_minutes += total_seconds/60
+    total_seconds = total_seconds % 60
+  end
+  if(total_minutes > 60)
+    total_hours += total_minutes / 60
+    total_minutes = total_minutes % 60
+  end
+  puts "The total time is #{total_hours/24} days and #{total_hours%24}:#{total_minutes}:#{total_seconds}"
+end
+validate_time("23:00:12","22:30:57","4:2:1","9:50:11")
