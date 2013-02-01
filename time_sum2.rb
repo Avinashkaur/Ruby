@@ -16,18 +16,12 @@ def time_sum(*input)
   total_seconds, total_minutes, total_hours = 0,0,0
   for i in 0..(len-1) do
     hours,minutes,seconds = input[i].split(":")
-    total_seconds += seconds.to_i
-    total_minutes += minutes.to_i
-    total_hours += hours.to_i
+    total_seconds += seconds.to_i + (minutes.to_i)*60 + (hours.to_i)*3600
   end
-  if(total_seconds > 60)
-    total_minutes += total_seconds/60
-    total_seconds = total_seconds % 60
-  end
-  if(total_minutes > 60)
-    total_hours += total_minutes / 60
-    total_minutes = total_minutes % 60
-  end
-  puts "The total time is #{total_hours/24} days and #{total_hours%24}:#{total_minutes}:#{total_seconds}"
+  total_minutes_temp= total_seconds/60
+  total_hours = total_minutes_temp/60
+  total_minutes = total_minutes_temp%60
+  total_seconds = total_seconds%60
+  puts "#{total_hours/24} days #{total_hours%24} hours #{total_minutes} minutes #{total_seconds} seconds"
 end
 validate_time("23:00:12","22:30:57","4:2:1","9:50:11")
