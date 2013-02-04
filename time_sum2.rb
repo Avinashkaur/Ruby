@@ -1,5 +1,5 @@
 def validate_time(*time_array)
-  pattern = /(0?[0-9]|1[1-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])/
+  pattern = /^(0?[0-9]|1[1-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])$/
   len = time_array.size
   flag = 0
   for i in 0..(len-1)

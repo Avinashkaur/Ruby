@@ -1,19 +1,15 @@
 require "date"
 require "time"
 def validate_time
-  pattern = /[0-2]?[0-9]:[0-9]?[0-9]:[0-9]?[0-9]/
-  puts "Enter time1: "
+  pattern = /^(0?[0-9]|1[1-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])$/
+  puts "Enter time1:"
   time1 = gets.chomp
-  puts "Enter time2: "
+  puts "Enter time2:"
   time2 = gets.chomp
-  begin
-    if (time1 =~ pattern && time2 =~ pattern)
-      time_sum(time1, time2)
-    else
-      puts "Invalid input! Correct input hh:mm:ss"
-    end
-  rescue 
-    puts "Invalid date entered!"
+  if (time1 =~ pattern && time2 =~ pattern)
+    time_sum(time1, time2)
+  else
+    puts "Invalid input!!"
   end
 end
 def time_sum(*time_array)
