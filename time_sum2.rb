@@ -12,10 +12,9 @@ def validate_time(*time_array)
   end
 end
 def time_sum(*input)
-  len = input.size
   total_seconds, total_minutes, total_hours = 0,0,0
-  for i in 0..(len-1) do
-    hours,minutes,seconds = input[i].split(":")
+  input.each do |new_time|
+    hours,minutes,seconds = new_time.split(":")
     total_seconds += seconds.to_i + (minutes.to_i)*60 + (hours.to_i)*3600
   end
   total_minutes_temp= total_seconds/60
@@ -24,4 +23,4 @@ def time_sum(*input)
   total_seconds = total_seconds%60
   puts "#{total_hours/24} days #{total_hours%24} hours #{total_minutes} minutes #{total_seconds} seconds"
 end
-validate_time("23:00:12","22:30:57","4:2:1","9:50:11")
+validate_time("22:00:12","22:30:57","4:2:1","9:50:11")

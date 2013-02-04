@@ -45,10 +45,9 @@ class Productlist
 end
 
 ans = 'y'
-products = []
 cart = Productlist.new
 i = 0
-while ans == 'y'
+while (ans == 'y' || ans == 'Y')
   print "Name of the product: "
   productname = gets.chomp
   print "Imported? (yes/no): "
@@ -57,8 +56,8 @@ while ans == 'y'
   exempted = gets.chomp
   print "Price: "
   price = gets.chomp.to_f
-  products[i] = Products.new(productname, imported, exempted, price)
-  cart.add_to_cart(products[i])
+  product = Products.new(productname, imported, exempted, price)
+  cart.add_to_cart(product)
   puts "Enter more? (y/n)"
   ans = gets.chomp
   i += 1

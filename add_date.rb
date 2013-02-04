@@ -1,7 +1,7 @@
 require "date"
 require "time"
 def validate_time
-  pattern = /^(0?[0-9]|1[1-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])$/
+  pattern = /^(0?[0-9]|1[1-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])/
   puts "Enter time1:"
   time1 = gets.chomp
   puts "Enter time2:"
@@ -13,10 +13,9 @@ def validate_time
   end
 end
 def time_sum(*time_array)
-  len = time_array.size
   total_seconds, total_minutes, total_hours = 0,0,0
-  for i in 0..(len-1) do
-    hours,minutes,seconds = time_array[i].split(":")
+  time_array.each do |new_time|
+    hours,minutes,seconds = new_time.split(":")
     total_seconds += seconds.to_i + (minutes.to_i)*60 + (hours.to_i)*3600
   end
   total_minutes_temp= total_seconds/60
