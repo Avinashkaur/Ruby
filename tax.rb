@@ -30,15 +30,14 @@ class Productlist
   end
 
   def display_products
-    len = @@selected_object.length
     total = 0.0
-    for i in 0..len-1
-      puts "Product Name: #{@@selected_object[i].productname}"
-      puts "Imported: #{@@selected_object[i].imported}"
-      puts "Exempted: #{@@selected_object[i].exempted}"
-      puts "Price: #{@@selected_object[i].price.round(2)}"
+    @@selected_object.each do |product|
+      puts "Product Name: #{product.productname}"
+      puts "Imported: #{product.imported}"
+      puts "Exempted: #{product.exempted}"
+      puts "Price: #{product.price.round(2)}"
       puts "-" *30
-      total = @@selected_object[i].calculate_tax
+      total = product.calculate_tax
     end
     puts "Total Bill: #{total}"
   end
