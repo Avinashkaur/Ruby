@@ -23,15 +23,19 @@ class Products
 end
 
 class Productlist
-  @@selected_object = []
+  attr_accessor  :selected_object
+
+  def initialize
+    @selected_object = []
+  end
 
   def add_to_cart(value)
-    @@selected_object.push(value)
+    @selected_object.push(value)
   end
 
   def display_products
     total = 0.0
-    @@selected_object.each do |product|
+    @selected_object.each do |product|
       puts "Product Name: #{product.productname}"
       puts "Imported: #{product.imported}"
       puts "Exempted: #{product.exempted}"

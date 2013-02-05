@@ -13,12 +13,12 @@ def validate_time
   end
 end
 def time_sum(*time_array)
-  total_seconds, total_minutes, total_hours = 0,0,0
+  total_seconds, total_minutes, total_hours = 0, 0, 0
   time_array.each do |new_time|
     hours,minutes,seconds = new_time.split(":")
     total_seconds += seconds.to_i + (minutes.to_i)*60 + (hours.to_i)*3600
   end
-  total_minutes_temp= total_seconds/60
+  total_minutes_temp = total_seconds/60
   total_hours = total_minutes_temp/60
   total_minutes = total_minutes_temp%60
   total_seconds = total_seconds%60
